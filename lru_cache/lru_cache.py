@@ -51,3 +51,16 @@ class LRUCache:
                 self.storage_dict[key] = self.storage.head
         else:
             self.storage_dict[key].value[key] = value
+            self.storage.move_to_front(self.storage_dict[key])
+
+
+
+# Structure:
+
+# storage dict has 
+# {
+#     key: node,
+#     another_key: another_node
+# }
+
+# storage is dll with each node holding value: {key: value}
