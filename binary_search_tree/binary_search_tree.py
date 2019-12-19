@@ -113,11 +113,19 @@ class BinarySearchTree:
 
     # Print In-order recursive DFT
     def pre_order_dft(self, node):
-        pass
+        print(node.value)
+        if node.left:
+            self.pre_order_dft(node.left)
+        if node.right:
+            self.pre_order_dft(node.right)
 
     # Print Post-order recursive DFT
     def post_order_dft(self, node):
-        pass
+        if node.left:
+            self.post_order_dft(node.left)
+        if node.right:
+            self.post_order_dft(node.right)
+        print(node.value)
 
 
 
@@ -129,8 +137,9 @@ class BinarySearchTree:
 # bst.insert(3)
 # bst.insert(4)
 # bst.insert(2)
-
-# bst.dft_print(bst)
+# def cb(n):
+#     print(n)
+# bst.for_each(cb)
 
         #   1
         #               8
